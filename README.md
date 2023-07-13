@@ -17,8 +17,12 @@ Conventions:
 - The class Solver is the Interface to use py_funm_quad without the GUI [ from calculate.solver import Solver ]
 - To import a database it has to be a .csv file but you can export a .csv and .mat file.
 
+
 Start py_funm_quad with GUI: [ Version 1.0 ] [ may change ]
+
 At the moment you have to be in py_funm_quad directory and start py_funm_quad.py
 
+
 And without a GUI: [ Version 1.0 ] [ may change ]
+
 The class Solver is the Interface to use py_funm_quad without the GUI [ from calculate.solver import Solver ]
