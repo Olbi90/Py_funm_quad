@@ -1,0 +1,185 @@
+Modules to use:
+- pandas
+- matplotlib
+- numpy
+- scipy
+- pillow
+- tkinter
+
+--- Update 12.12.22
+Redifened the Structure so that in every directory everything it needs is inside that directory so circular imports are no matter anymore
+renamed classes and modules for better reading
+First Arnoldi implementation is in 'funtions'
+Matrix generator, question is new window?
+Poisson and Tridiagonalmatrix
+
+--- Update 13.12.22
+Create first test matrices (Poisson and Tridiagonal)
+Solve an easy Arnoldi Iteration
+Save and load testmatrices and plot them
+Maybe redefine fileprocessing as global tool
+added Matrixgenerator, first parameters, and save and a basic store architecture
+
+---Update 15.12.22
+Recreated Configfile Class (with Constructor, statics and a new Startup Procedure)
+Recreated Solver, Matrixgenerator (like Configfile)
+Added Algorithms and Pandas for statistics
+Redesigned the structure
+
+---Update 20.12.22
+Added Save Dataframe to csv,exel,json
+Recreated Mainwindow
+Recreated Use of Mainwindow (Solve, Plot, etc.)
+
+---Update 21.12.22
+Added Matrix Multiplication and Scalar Product Counter to Database in arnoldi
+Added exact solution difference to Database in arnoldi
+
+---Update 22.12.22
+Fixed Colorbar bug
+Recreated return type of solving parameters
+Added Individual Matrix Savings and first Handling for not overwritting files
+Added Listbox on Mainwindow for Matrix in file, and Refresh
+
+---Update 23.12.22
+Added exp to functions
+Added different Matrix to choose from listbox, to solve different equations
+
+---Update 27.12.22
+Optimized the Code (Maincommands, Generator, Configfile)
+Added Parameter Dictionary
+Added File and File Import, to import .mat Files
+
+---Update 28.12.22
+Added multiple Checkboxes to choose wich to plot
+Maybe try to save in .npy then in .txt for Memory?
+
+---Update 02.01.23
+Split Modules and Classes and updated imports
+Fileprocessing, Matrix Module changed
+.npy the file to work with for better Memory
+Scrollbar to list, added filefunctions
+
+---Update 10.01.23
+Fixed some Bugs in the Solver (load .npy files, columns missmatch)
+Added various functions into the Database class (now show table in window)
+Added Database save in different files function to Database (Matlab works!) -> Whats next? Add Export to Databasewindow and to Mainwindow, without plottind DB Redefine Windowhandling Redefine Solver and Matrix class Add Parameter
+
+---Update 11.01.23
+Layout of MainWindow and GeneratorWindoe designed
+Added PlotterWindow and DatabaseWindow
+Added Database import
+Redefined Solver and a few Commands
+
+---Update 12.01.23
+Added a first small Interface for using without Gui
+Started to define Plotterwindow for givin' some Output
+Functions for Database to interact with Dataframe
+
+---Update 18.01.23
+Added a Testumgebung to implement restared Arnoldi
+
+---Update 19.01.23
+mrdivide: Matlabs A/B is not so easy to implement for vectors we can use: scipy.linalg.lstsq(B.T,A.T)[0].T 
+  it returns as a full Matrix and not like in Matlab (Zeros,Vector) and solves xB = A for matrix we can use both: 
+  scipy.linalg.lstsq(B.T,A.T)[0].T scipy.linalg.solve(B.T,A.T).T the second one cuts decimal numbers MAYBE FIX?
+mldivide: A\b Not so easy, watch out sometime just division, else us scipy.linalg.solve(A,b) so that Ax = b
+keep shape when slicing, with using [] in slicing ex: v[:,[19]]
+
+---Update 21.01.23
+First simple Algorithm works, improments have to be made in shapes but undefined error when reshaping csc_array
+Next Steps: Implement it in to GUI and normal Classes define it for another function and implement several meassuring variables
+
+---Update 24.01.23
+Log and InvSqrt seem to work, slightly difference in Log Function? Maybe better Algorithm or the Eigenvalues are a Problem?
+First Meassurement variables in the simple functions
+Next Steps: Implement it in GUI and in normal class, to use the Schnittstelle. MAtrixgenerator -> Spare Matrix
+
+---Update 25.01.23
+Implemented the Algorithm for LOG and INVSQRT into the GUI Application
+Next Steps: Measurments, SparseMatrix in Generator, Fileloading(Matrix, etc. from Matlab), Schnittstelle
+
+---Update 27.01.23
+Added Output Commandfield and Class to show Code in the GUI
+Next Steps: Measurments, SparseMatrix in Generator, Fileloading(Matrix, etc. from Matlab), Schnittstelle
+
+---Update 28.01.23
+Merged Maincommands and Mainwindow
+Merged Generatorcommands and Generator both due to readibility and handling
+
+---Update 30.01.23
+created abstract class for functions and edited restart
+created subclass from abstract = Logaritmus and Invsqrt
+
+---Update 15.02.23
+created new Solver class working with new .mat Format
+deleted old Solverclass and changed MainCommand with ONE File
+Fixed wrong calculation in Loagarithmus
+
+---Update 16.02.23
+created File Explorer with changeable Drive for Windows
+Redefined GUI
+Choose File via Explorer, or run with Default TODO: For Linux!
+
+---Update 17.02.23
+Created class to measure different time aspects
+Linux Compability (without root and hidden files)
+Warning before using Default
+Added Loading Screen and Icon for Application
+Rediefined classes, so no more need of a Config file (Delete Later)
+Startup Check if .tmp Exists for making the Generator work!
+
+---Update 19.02.23
+Added exp Function and the .mat files to test TODO: ICO on Linux must be deleted!
+
+---Update 21.02.23
+Deleted Config, Fileprocessing
+Started to redefine Database
+Solved GUI Issues and deleted Icon for Linux
+Style to look more 'fresh' TODO: Min Size of Widget, sparse Matrices instead of Numpys Copyright for Scipy
+
+---Update 22.02.23
+Deleted Fileprocessing and added it into Solver
+Added Save Function and Load function, to load different files
+made save for non GUI Application TODO: Memeory Usage when converting?
+
+---Update 23.02.23:
+Deleted Matrixgenerator and all the other stuff from it
+added inner_product function to abstract so one can use his own
+redefined first_approx because h has to be returned for stopping
+redefined simple restart function (on dictionary)
+added stopping accuracy
+
+---Update 01.03.23
+Added Python Script Export
+Database is now easiert to add new measurements
+Added some Menue Points
+Fixed issues with wrong dictionary
+
+---Update 04.03.23:
+Redesigned Database Window (without Eigenvalues and Error Norms)
+Added Lanczos
+Added abstract Matrixfunction and Algorithm and redefined
+Import and Export of Database is now possible! TODO: Test A is hermitian and Graphics, Maybe .mat Database import
+
+---Update 05.03.23
+Docstrings in everyclass
+PEP8 as good as possible
+Graphic Minimum is now possible
+deleted unneccesary files, directorys and code
+hermitian test added TODO: Lanczos
+
+---Update 06.03.23
+Fixed Eigenvalue Error for all plot
+Fixed Error when opening Plotwindow without Database TODO: Legend for all plot
+
+---Update 08.03.23: 
+TODO: Plot Error Norms Legende Eigenvalues
+
+---Update 14.03.23: 
+Release of Version py_funm_quad 1.0 Latest Updates:
+
+Minor BugFixes
+Plotterwindow uses better Usecases now (Plot Eigenvalues of Cycle)
+Export Pythonfile and Save approx fixed
+Linux and Windows compatible - Tested on Windows 10 and Linux Mint
